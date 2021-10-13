@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   ghidra:
-    image: almohress/ghidra-server:10.0.3
+    image: almohress/ghidra-server:10.0.4
     ports:
       - 13100:13100
       - 13101:13101 
