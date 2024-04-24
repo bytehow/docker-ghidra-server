@@ -1,4 +1,4 @@
-FROM gradle:jdk11 as builder
+FROM gradle:jdk17 as builder
 
 ENV GITHUB_URL https://github.com/NationalSecurityAgency/ghidra.git
 
@@ -20,13 +20,13 @@ RUN echo "[+] Building Ghidra..." \
 WORKDIR /ghidra
 
 RUN echo "[+] Unzip Ghidra..." \
-    && unzip /root/git/ghidra/build/dist/ghidra_*_linux64.zip -d /tmp \
+    && unzip /root/git/ghidra/build/dist/ghidra_*_linux_x86_64.zip -d /tmp \
     && mv /tmp/ghidra_*/* /ghidra \
     && chmod +x /ghidra/ghidraRun \
     && rm -rf /ghidra/docs /ghidra/Extensions/Eclipse /ghidra/licenses
 
 ##########################################################################################
-FROM openjdk:11-jdk-slim
+FROM openjdk:17-jdk-slim
 
 LABEL maintainer "https://github.com/blacktop"
 
