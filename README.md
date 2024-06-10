@@ -56,6 +56,7 @@ docker run -it --rm \
 | - | - | - | - |
 |`GHIDRA_USERS` | Space seperated list of users to create | No | `admin` |
 |`GHIDRA_PUBLIC_HOSTNAME` | IP or hostname that remote users will use to connect to server. Set to `0.0.0.0` if hosting locally. If not set, it will try to discover your public ip by querying OpenDNS | No | Your public IP | 
+| GHIDRA_SERVER_CONF | Path to a custom Ghidra server.conf | No | Use server.conf provided by the container |
 
 ## Additional information
 

@@ -17,6 +17,10 @@ if [ "$1" = 'server' ]; then
     done
   fi
 
+  if [ -f "${GHIDRA_SERVER_CONF}" ] && [ "${GHIDRA_SERVER_CONF}" != "/ghidra/server/server.conf" ]; then
+    cp "${GHIDRA_SERVER_CONF}" /ghidra/server/server.conf
+  fi
+
   exec "/ghidra/server/ghidraSvr" console
 fi
 
